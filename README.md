@@ -1,7 +1,6 @@
-```markdown
-# bMPSOGOA: Binary Modified Particle Swarm Optimization Grasshopper Optimization Algorithm for Feature Selection
+# bMPSOGOA: Binary Modified Particle Swarm Optimization Gazelle Optimization Algorithm for Feature Selection
 
-This repository contains a high-performance Python implementation of the **Binary Modified Particle Swarm Optimization Grasshopper Optimization Algorithm (bMPSOGOA)**. This hybrid metaheuristic algorithm is specifically designed to solve high-dimensional **Feature Selection** problems by combining the robust global exploration of Particle Swarm Optimization (PSO) with the refined local exploitation of the Grasshopper Optimization Algorithm (GOA).
+This repository contains a high-performance Python implementation of the **Binary Modified Particle Swarm Optimization Gazelle Optimization Algorithm (bMPSOGOA)**. This hybrid metaheuristic algorithm is specifically designed to solve high-dimensional **Feature Selection** problems by combining the robust global exploration of Particle Swarm Optimization (PSO) with the refined evolutionary dynamics of the Gazelle Optimization Algorithm (GOA).
 
 ---
 
@@ -10,10 +9,10 @@ This repository contains a high-performance Python implementation of the **Binar
 ### 1. Hybridization Concept (MPSOGOA)
 Individually, both PSO and GOA are outstanding optimizers, but they have distinct strengths and limitations:
 - **PSO** is highly effective at global exploration but can easily get trapped in local optima due to premature convergence.
-- **GOA** mimics the cooperative behavior of grasshopper swarms. It adjusts attraction and repulsion dynamics, which provides superb local exploitation but can suffer from slow convergence speed.
+- **GOA** mimics the foraging and predator-evasion behaviors of gazelles. While it provides excellent localized exploitation behavior, the original framework can suffer from stability issues and low convergence accuracy in complex spaces.
 
-**MPSOGOA** merges these approaches. It enhances the classical GOA formulation by integrating the **velocity/inertia update mechanism of PSO**, allowing agents to dynamically adjust their trajectories based on:
-1. Social interactions among grasshoppers (attraction/repulsion forces).
+**MPSOGOA** merges these approaches to eliminate individual limitations. It enhances the gazelle tracking formulation by integrating the **velocity/inertia update mechanism of PSO**, allowing agents to dynamically adjust their trajectories based on:
+1. Adaptive evolutionary exploitation patterns of gazelles running or escaping.
 2. Their personal historical best position ($p_{best}$).
 3. The global swarm's best position ($g_{best}$).
 
@@ -46,9 +45,6 @@ Ensure you have a Python 3.8+ environment. You can install all necessary depende
 ```bash
 pip install numpy pandas scikit-learn matplotlib seaborn
 
-```
-
----
 
 ## How to Run
 
@@ -80,8 +76,6 @@ You can tune the core parameters inside `bMPSOGOA_final.py` or the benchmark scr
 | --- | --- | --- |
 | `N_AGENTS` | Swarm / Population size (Number of search agents) | $15 - 40$ |
 | `MAX_ITER` | Maximum number of optimization cycles | $20 - 100$ |
-| `cMax` | Max parameter controlling GOA's comfort zone decay | $1.0$ |
-| `cMin` | Min parameter controlling GOA's comfort zone decay | $0.00001$ |
 | `w_inertia` | PSO inertia weight factor | $0.4 - 0.9$ |
 | `c1`, `c2` | Cognitive and Social acceleration factors | $1.5 - 2.0$ |
 
@@ -92,7 +86,7 @@ You can tune the core parameters inside `bMPSOGOA_final.py` or the benchmark scr
 Upon completion, the scripts will generate several logs and visualizations:
 
 1. **Console Summary**: Accurate details on the baseline accuracy (using all features) compared to the post-optimization performance, highlighting the reduction in feature dimensionality.
-2. **Convergence Charts (`comparison.png`)**: Shows how quickly bMPSOGOA converges to high-accuracy states compared to pure PSO and GOA.
+2. **Convergence Charts (`comparison.png`)**: Shows how quickly bMPSOGOA converges to high-accuracy states compared to pure PSO and standard GOA variants.
 3. **Transfer Function Performance Plots**: Visual verification of S-shaped vs. V-shaped binarization performance in terms of exploration stability and feature preservation.
 
 ---
