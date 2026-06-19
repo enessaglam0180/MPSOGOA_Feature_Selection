@@ -94,7 +94,3 @@ Upon completion, the scripts will generate several logs and visualizations:
 ## License
 
 This project is open-source. Feel free to use and modify it for your research and application developments.
-
-```
-
-```
